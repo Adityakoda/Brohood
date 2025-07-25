@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
+</head> 
+
+<body>
+    <section class="home"> 
+        <nav>
+            <div class="container nav__container">
+                <img src="./images/threejs.png" alt="logo"   class="logo">
+                <ul class="nav__menu">
+                    <a href="main.html"><h0>Home</h0></a> 
+                    <a href="products.html"><h0>Products</h0></a>
+                    <a href="#" id="profile-link"><h0>Profile</h0></a>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="main-text">
+            <div class="home-content">
+            <h1 class="head-text">LET'S <br /> DO IT.</h1>
+            <model-viewer src="./images/oversized_t-shirt.glb" alt="3D Shirt" auto- rotate camera-controls class="shirt"></model-viewer>
+
+            <div class="content-text">
+                <p>Create your unique and exclusive shirt with our brand-new 3D customization tool. <strong>Unleash your imagination</strong> and define your own style.</p>
+                <button class="custom-button" id="customize-button">Customize It</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="signup-modal" class="signup-container">
+        <form class="frm" id="signupForm">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <h1>Sign Up</h1>
+
+            <div class="content">
+                <label for="signup-username"><h2>Username</h2></label>
+                <input type="text" id="signup-username" placeholder="Name" required>
+            </div>
+            <div class="content">
+                <label for="signup-email"><h2>Email</h2></label>
+                <input type="email" id="signup-email" placeholder="Email" required>
+            </div>
+            <div class="content">
+                <label for="signup-password"><h2>Password</h2></label>
+                <input type="password" id="signup-password" placeholder="Password" required>
+            </div>
+
+            <div class="signup">
+                <button type="button" id="signup-button" class="signup-btn">Sign Up</button>
+            </div>
+            <div class="social-btns">
+                <button type="button" class="s-btn"><img src="images/google.svg" alt="Google" />Google</button>
+                <button type="button" class="s-btn"><img src="images/apple.svg" alt="Apple" />Apple</button>
+            </div>
+
+            <h3>Have an account? <a href="#" id="signup-link">Login Here</a></h3>
+        </form>
+    </div>
+
+    <div id="login-modal" class='login-container'>
+        <form class='frm' id="loginForm">
+            <span class="close-btn" id="close-modal1">&times;</span>
+            <h1>Login</h1>
+
+            <div class="content">
+                <label for="login-email"><h2>Email</h2></label>
+                <input type="email" id="login-email" placeholder="Email" required>
+            </div>      
+            <div class="content">
+                <label for="login-password"><h2>Password</h2></label>
+                <input type="password" id="login-password" placeholder="Password" required>
+            </div>
+
+            <div class="signup">
+                <button type="button" id="login-button" class="signup-btn">Login</button>
+            </div>
+            <div class="social-btns">
+                <button type="button" class="s-btn"><img src="images/google.svg" alt="Google" />Google</button>
+                <button type="button" class="s-btn"><img src="images/apple.svg" alt="Apple" />Apple</button>
+            </div>
+
+            <h3>New User?<a href="#" id="login-link">Create Account</a></h3>
+        </form>
+    </div>
+
+    <section class="container2 ">
+        
+        <div class="nest">
+            <div class="left">
+                <p>At Brohood, we believe that fashion should be more than just clothing—it should be a form of self-expression. That’s why we’ve created an innovative e-commerce platform that allows you to design your own 3D T-shirts with ease. Using the latest technology in React.js, Three.js, and immersive web experiences, we bring your creativity to life, letting you customize every detail of your T-shirt in real time. Whether you're an artist looking to showcase your work, a brand wanting unique merchandise, or someone who simply loves wearing one-of-a-kind outfits, Brohood is the perfect place to create fashion that truly represents you.
+
+            </div>
+            <div class="right">
+                <img src="./images/3 shirts.png" class="img1" alt="vintage" />
+            </div>
+        </div>
+        <div class="nest-flip">
+            <div class="left">
+                <p>Gone are the days of choosing from generic T-shirt designs. With Brohood’s interactive 3D customization tool, you have complete control over how your T-shirt looks. Our advanced editor allows you to rotate, zoom, and preview your design from every angle, ensuring that every detail is just the way you want it. You can upload your own images, select from a wide range of patterns and textures, experiment with vibrant colors, and add personalized text to make your T-shirt stand out. Whether you prefer minimalistic aesthetics, bold graphics, or intricate artwork, our platform gives you the freedom to create something truly unique and tailored to your style.
+                    
+                </p>
+            </div>
+            <div class="right">
+                <img src="./images/poes.png" class="img2" alt="snake" />
+            </div>
+        </div>
+        <div class="nest">
+            <div class="left">
+                
+            <p>At Brohood, we don’t just prioritize creativity—we ensure that every custom T-shirt is made from premium-quality materials. Our fabrics are soft, breathable, and durable, providing all-day comfort while maintaining vibrant print quality. Our state-of-the-art 3D printing technology ensures that your designs come to life with sharp details, deep colors, and a flawless finish. Unlike traditional prints that fade or crack over time, our printing method guarantees long-lasting durability, so your custom T-shirt remains as striking as the day you designed it. Whether you’re wearing it casually or making a fashion statement, you can trust that your Brohood T-shirt will always turn heads.
+                
+            </p>
+        </div>
+        <div class="right">
+            <img src="./images/orange.png" class="img3"  alt="duck" />
+        </div>
+    </div>
+</section>
+
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyA2TmnnpD66DAcLuwN9nvLbmjEwDPiHslQ",
+            authDomain: "authentication-2ef8e.firebaseapp.com",
+            projectId: "authentication-2ef8e",
+            storageBucket: "authentication-2ef8e.firebasestorage.app",
+            messagingSenderId: "662659601215",
+            appId: "1:662659601215:web:15123c74b431bf3444798a"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        document.getElementById("signup-button").addEventListener("click", function (event) {
+    event.preventDefault();
+    const username = document.getElementById("signup-username").value;
+    const email = document.getElementById("signup-email").value;
+    const password = document.getElementById("signup-password").value;
+
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            alert("Account created successfully!");
+            localStorage.setItem("username", username); // Store username instead of email
+            window.location.href = "main.html";
+        })
+        .catch((error) => {
+            alert(error.message);
+        });
+});
+
+document.getElementById("login-button").addEventListener("click", function (event) {
+    event.preventDefault();
+    const email = document.getElementById("login-email").value;
+    const password = document.getElementById("login-password").value;
+
+    signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            alert("Login successful!");
+            // Keep the stored username from signup, don't overwrite it with email
+            if (!localStorage.getItem("username")) {
+                localStorage.setItem("username", email.split('@')[0]); // Fallback if no username exists
+            }
+            window.location.href = "main.html";
+        })
+        .catch((error) => {
+            alert(error.message);
+        });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const profileLink = document.getElementById("profile-link");
+    const username = localStorage.getItem("username");
+
+    if (username) {
+        profileLink.innerHTML = `<h1>${username}</h1>`; 
+    }
+});
+
+
+    </script>
+    <script>
+        document.getElementById("customize-button").addEventListener("click", function () {
+            document.querySelector(".home-content").classList.add("fade-out");
+            setTimeout(() => {
+                window.location.href = "main.html";
+            }, 1000);
+        });
+
+        document.getElementById("profile-link").addEventListener("click", function (event) {
+    event.preventDefault();
+    const username = localStorage.getItem("username");
+
+    if (username) {
+        window.location.href = "admin.html"; 
+    } else {
+        document.getElementById("login-modal").style.display = "flex"; 
+    }
+});
+
+
+        document.getElementById("close-modal").addEventListener("click", function () {
+            document.getElementById("signup-modal").style.display = "none";
+        });
+
+        document.getElementById("login-link").addEventListener("click", function (event) {
+            event.preventDefault();
+            document.getElementById("signup-modal").style.display = "flex";
+            document.getElementById("login-modal").style.display = "none";
+        });
+
+        document.getElementById("signup-link").addEventListener("click", function (event) {
+            event.preventDefault();
+            document.getElementById("login-modal").style.display = "flex";
+            document.getElementById("signup-modal").style.display = "none";
+        });
+
+        document.getElementById("close-modal1").addEventListener("click", function () {
+            document.getElementById("login-modal").style.display = "none";
+        });
+
+
+
+
+</script>
+
+
+</body>
+
+</html>

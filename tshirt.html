@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+    <link rel="stylesheet" href="tshirt.css">
+   
+    <title>Tshirt</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        </style>
+</head>
+<body>
+    <div class="container">
+
+        <model-viewer src="tshirt10.glb" auto-rotate camera-controls class="model"></model-viewer>
+
+        <div class="product-details"> 
+            <div class="product-name">
+                <h1>Mockup</h1>
+            </div>
+            <div class="product-desc">
+                <h3>Description</h3>
+                <p>Experience unmatched comfort and style with this premium t-shirt, designed to be your go-to piece for any occasion. Made from high-quality, breathable fabric, this tee is soft on the skin and ensures all-day comfort. Its modern fit and classic design make it perfect for casual outings, lounging at home, or layering with your favorite jacket. Available in a variety of colors and sizes, it’s easy to find the perfect match for your wardrobe. Whether you’re dressing up or keeping it low-key, this t-shirt combines effortless style with lasting durability</p>
+            </div>
+            <div class="price">
+                <h3>Price</h3>
+                <h4>10$</h4>
+            </div>
+            <div class="size"> 
+                <h3>Size</h3>
+                <button>S</button>
+                <button>M</button>
+                <button>L</button>
+                <button>XL</button>
+                <button>XXL</button>
+            </div> 
+            <div class="quantity" id="quantity">
+                <button class="minus">-</button>
+                <button class="num">0</button>
+                <button class="plus">+</button>
+            </div>
+            <div class="btns">
+                <button onclick="buyNow(productId)">Buy Now</button> 
+                <button onclick="addCart(productsId)">Add to Cart</button>
+                <button>Add to Wishlist</button>
+            </div> 
+        </div>
+    </div>
+    <script >
+        document.addEventListener("DOMContentLoaded", () => {
+    const plus = document.querySelector(".plus");
+    const minus = document.querySelector(".minus");
+    const num = document.querySelector(".num");
+
+    let a = 0;
+
+    plus.addEventListener("click", () => {
+        a++;
+        console.log(a);
+        num.textContent = a;
+    });
+
+    minus.addEventListener("click", () => {
+        if (a > 0) {
+            a--;
+            console.log(a);
+            num.textContent = a;
+        }
+    });
+});
+
+
+function show(){
+    let x=document.getElementById('quantity');
+    if(x.style.display === 'none'|| x.style.display === ''){
+        x.style.display="flex";
+    }
+}
+
+function product(){
+    var name=document.getElementById('0').value;
+    console.log(name);
+}
+document.addEventListener("DOMContentLoaded", ()=>{
+const urlParams= new URLSearchParams(window.location.search)
+const productId= urlParams.get('id');
+
+const productsData = [
+    { 
+        name: "Floral Tshirt",
+        desc: "Bring the beauty of nature into your wardrobe with this vibrant floral tee. Designed with rich, colorful blooms, it adds a fresh and lively touch to any outfit. Crafted from breathable cotton, it keeps you cool even on the hottest days. Perfect for picnics, brunches, or just bringing some sunshine into your day.",
+        price: "10$",
+        model: "./3d models/Floral.glb",
+        image:" pic.jpg",
+    },
+    {
+        name: "Ocean Tshirt",
+        desc: "Dive deep into the cool tones of the Ocean T-shirt. Featuring soothing wave patterns and soft gradients, it’s designed to bring calmness wherever you go. Made with ultra-soft fabric, it’s lightweight and perfect for summer. Whether you're heading to the beach or just chilling out, this tee has you covered.",
+        price: "10$",
+        model: "./3d models/Waves.glb",
+        image:" pic1.png",
+    },
+    {
+        name: "Astrology Tshirt",
+        desc: "Unlock the mysteries of the universe with our Astrology T-shirt. Decorated with stunning celestial graphics, it speaks to the dreamer and explorer in you. Crafted from premium material for maximum comfort, it's a subtle yet powerful style statement. Ideal for stargazers, night owls, and lovers of cosmic beauty.",
+        price: "10$",
+        model: "./3d models/Astro.glb",
+        image:" pic2.png",
+    },
+    {
+        name: "White Design Tshirt",
+        desc: "Simplicity never goes out of style, and our White Design T-shirt proves it. With its clean lines and minimalist look, it’s a versatile staple for any closet. Layer it under a jacket or wear it solo — either way, you’ll look effortlessly stylish. Crafted from high-quality fabric for a soft, premium feel.",
+        price: "10$",
+        model: "./3d models/Black and white.glb",
+        image:" pic3.png",
+    },
+    {
+        name: "Farm Tshirt",
+        desc: "Escape to the tranquility of nature with our Farm T-shirt. Featuring earthy tones and rustic patterns, it captures the heart of the countryside spirit. The comfortable fit and soft material make it ideal for casual days. Great for farmers at heart or anyone who loves the simple life.",
+        price: "10$",
+        model: "./3d models/Farm.glb",
+        image:" pic4.png",
+    },
+    {
+        name: "White and Blue Tshirt",
+        desc: "Sharp, crisp, and effortlessly stylish — the White and Blue T-shirt makes a bold statement with simplicity. Designed for those who appreciate clean aesthetics, it pairs perfectly with denim or joggers. Soft, breathable, and perfect for active days or laid-back weekends. A classic piece with a modern twist.",
+        price: "10$",
+        model: "./3d models/white and blue.glb",
+        image:" pic5.png",
+    },
+    {
+        name: "Smile Tshirt",
+        desc: "Wear your positivity with pride in the Smile T-shirt. Featuring a playful graphic and bright energy, this tee is designed to boost your mood and everyone else's. Crafted for comfort with a relaxed fit, it’s perfect for casual outings. Spread good vibes wherever you go!",
+        price: "10$",
+        model: "./3d models/Smile.glb",
+        image:" pic6.png",
+    },
+    {
+        name: "Shadow Wraith T-Shirt",
+        desc: "Unleash your dark side with the Shadow Wraith T-Shirt, featuring a striking design of a mysterious clawed figure emerging from the shadows. Set against a deep teal and black gradient, this shirt captures the essence of dark fantasy and bold style. Made from premium fabric for all-day comfort and durability, it's perfect for fans of supernatural, gothic, or fantasy themes.",
+        price: "10$",
+        model: "./3d models/Ghost.glb",
+        image:" pic7.png",
+    },
+    {
+        name: "Disney Tshirt",
+        desc: "Step into a world of wonder with our Disney T-shirt. Featuring beloved characters and nostalgic artwork, this tee brings childhood magic to life. Soft, lightweight, and bursting with charm, it’s a must-have for every Disney lover. Perfect for park trips, movie nights, or everyday adventures.",
+        price: "10$",
+        model: "./3d models/Disney.glb",
+        image:" pic8.png",
+    },
+    {
+        name: "Samurai Tshirt",
+        desc: "Channel ancient warrior spirit with the Samurai T-shirt. Bold graphics and strong lines pay tribute to the honor, strength, and discipline of the samurai. Designed for comfort and power, it’s perfect for anyone who walks their own path. A statement piece that commands respect.",
+        price: "10$",
+        model: "./3d models/Samurai.glb",
+        image:" pic9.png",
+    },
+    {
+        name: "Royal Green Tshirt",
+        desc: "Step into elegance with the Royal Green T-shirt. Deep, luxurious hues meet flawless design, making this tee a standout piece for any wardrobe. The rich color complements every skin tone, while the ultra-soft fabric ensures all-day comfort. Feel confident, stylish, and a little bit regal.",
+        price: "10$",
+        model: "./3d models/Royal green.glb",
+        image:" pic10.png",
+    },
+    {
+        name: "AIR Tshirt",
+        desc: "Experience true freedom with the AIR T-shirt. Ultra-lightweight and breathable, it’s made for those who are always on the move. Whether you’re working out, traveling, or relaxing, this tee keeps you feeling fresh and unrestricted. Designed for those who live life without limits.",
+        price: "10$",
+        model: "./3d models/Air back.glb",
+        image:" pic11.png",
+    },
+];
+
+
+if(productId !== null && productsData[productId]){
+    const product=productsData[productId];
+
+    document.querySelector('model-viewer').setAttribute('src',product.model);
+    document.querySelector('.product-name h1').textContent=product.name;
+    document.querySelector('.product-desc p').textContent=product.desc;
+    document.querySelector('.price h4').textContent=product.price;
+}
+else{
+    console.error("product not found");
+}});
+
+
+
+    </script>
+    <script>
+        function buyNow(id) {
+    const productsData = [
+        { 
+            name: "Floral Tshirt",
+            price: "10$",
+            image: "pic.jpg"
+        },
+        {
+        name: "Ocean Tshirt",
+        price: "10$",
+        image:"pic1.png",
+    },
+    {
+        name: "Astrology Tshirt",
+        price: "10$",
+        image:"pic2.png",
+    },
+    {
+        name: "White Design Tshirt",
+        price: "10$",
+        image:"pic3.png",
+    },
+    {
+        name: "Farm Tshirt",
+        price: "10$",
+        image:"pic4.png",
+    },
+    {
+        name: "White and Blue Tshirt",
+        price: "10$",
+        image:"pic5.png",
+    },
+    {
+        name: "Smile Tshirt",
+        price: "10$",
+        image:"pic6.png",
+    },
+    {
+        name: "Mixed Tshirt",
+        price: "10$",
+        image:"pic7.png",
+    },
+    {
+        name: "Disney Tshirt",
+        price: "10$",
+        image:"pic8.png",
+    },
+    {
+        name: "Samurai Tshirt",
+        price: "10$",
+        image:"pic9.png",
+    },
+    {
+        name: "Royal Green Tshirt",
+        price: "10$",
+        image:"pic10.png",
+    },
+    {
+        name: "AIR Tshirt",
+        price: "10$",
+        image:"pic11.png",
+    },
+    ];
+    
+    if(id !== null && productsData[id]) {
+        const product = productsData[id];
+        const priceInRupees = 10; 
+        
+        window.location.href = `checkout.html?id=${id}&name=${encodeURIComponent(product.name)}&price=${priceInRupees}&image=${encodeURIComponent(product.image)}`;
+    } else {
+        console.error("Product not found or ID not provided");
+    }
+}
+const urlParams= new URLSearchParams(window.location.search)
+const productId= urlParams.get('id');
+    </script>
+    <script>
+        function addCart(id) {
+    const productsData = [
+        { 
+            name: "Floral Tshirt",
+            price: "10$",
+            image: "pic.jpg"
+        },
+        {
+        name: "Ocean Tshirt",
+        price: "10$",
+        image:"pic1.png",
+    },
+    {
+        name: "Astrology Tshirt",
+        price: "10$",
+        image:"pic2.png",
+    },
+    {
+        name: "White Design Tshirt",
+        price: "10$",
+        image:"pic3.png",
+    },
+    {
+        name: "Farm Tshirt",
+        price: "10$",
+        image:"pic4.png",
+    },
+    {
+        name: "White and Blue Tshirt",
+        price: "10$",
+        image:"pic5.png",
+    },
+    {
+        name: "Smile Tshirt",
+        price: "10$",
+        image:"pic6.png",
+    },
+    {
+        name: "Mixed Tshirt",
+        price: "10$",
+        image:"pic7.png",
+    },
+    {
+        name: "Disney Tshirt",
+        price: "10$",
+        image:"pic8.png",
+    },
+    {
+        name: "Samurai Tshirt",
+        price: "10$",
+        image:"pic9.png",
+    },
+    {
+        name: "Royal Green Tshirt",
+        price: "10$",
+        image:"pic10.png",
+    },
+    {
+        name: "AIR Tshirt",
+        price: "10$", 
+        image:"pic11.png",
+    },
+    ];
+    
+    if (id !== null && productsData[id]) {
+        const product = productsData[id];
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Check for duplicate using product name (or you can use image or any other unique property)
+        const exists = cartItems.some(item => item.name === product.name);
+
+        if (!exists) {
+            cartItems.push(product);
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+            alert("Your item has been added to the cart successfully!");
+        } else {
+            alert("This item is already in your cart.");
+        }
+    } else {
+        console.error("Product not found or ID not provided");
+    }
+}
+
+    const Params = new URLSearchParams(window.location.search);
+    const productsId = urlParams.get('id');
+    
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+*{
+    margin-left:10px;
+    margin-right: 10px;
+    padding: 0;
+    font-family:'poppins';  
+}
+body{
+    background: linear-gradient(180deg, #f0f0f0, #a28089);
+    height:auto;
+}
+.model{
+   width: 1000px;
+   height: 1000px;
+   margin-top: -200px;
+}
+.container{
+    display: flex;
+}
+.product-details{
+    margin-top: 30px;
+    margin-left: 200px;
+}
+.product-name h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+.product-desc h3,
+.price h3,
+.size h3 {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #555;
+}
+.product-desc p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+    margin-top: 8px;
+}
+
+.price h4 {
+    font-size: 1.2rem;
+    color: #222;
+    margin-top: 5px;
+}
+
+.btns {
+    margin-top: 30px;
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.btns button {
+    flex: 1;
+    padding: 12px 18px; 
+    border: 2px solid #333;
+    background-color: #333;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btns button:hover {
+    background-color: white;
+    color: #333;
+}
+.size button{
+    padding: 10px;
+    background-color:white;
+    cursor: pointer;
+    border:0px solid black;
+}
+.size button:hover{
+    border: 2px solid #333;
+}
+.quantity {
+    display: none;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity button {
+    background-color: #f0f0f0;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quantity .num {
+    width: 40px;
+    text-align: center;
+    background-color: transparent;
+    pointer-events: none;
+}

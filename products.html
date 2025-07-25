@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./products.css">
+</head>
+<body>  
+  <div class="container1">
+    <nav> 
+      <div class="container nav__container">
+          <img src="./images/threejs.png" alt="logo" class="logo" >
+          <ul class="nav__menu">
+              <a href="main.html"><h0>Home</h0></a> 
+              <a href="products.html"><h0>Products</h0></a>
+              <a href="MyCart.html"><h0>MyCart</h0></a>
+              <a href="#" id="profile-link"><h0>Profile</h0></a> 
+          </ul> 
+      </div>
+    </nav>
+  <div class="main-text">
+    <a href="/index.html">BRO <br/>HOOD</a>  
+    <h2>Products</h2>
+  </div>
+  </div>
+  <div class="container">
+    <div class="card" id="0" onclick="openProduct(0)" >
+        <img src="./images/pic.jpg" alt="">
+        <div class="desc">
+            <h4>Floral Tshirt</h4>
+            <span>Price : 10$</span>
+        </div>
+    </div>
+    <div class="card" id="1" onclick="openProduct(1)">
+        <img src="./images/pic1.png" alt="">
+        <div class="desc">
+            <h4>Ocean Tshirt</h4>
+            <span>Price : 10$</span>
+        </div>
+    </div>
+    <div class="card" id="2" onclick="openProduct(2)">
+        <img src="./images/pic2.png" alt="">
+        <div class="desc">
+            <h4>Astrology Tshirt</h4>
+            <span>Price : 10$</span>
+        </div>
+    </div>
+    <div class="card" id="3" onclick="openProduct(3)">
+        <img src="./images/pic3.png" alt="">
+        <div class="desc">
+            <h4>White Design Tshirt</h4>
+            <span>Price : 10$</span>
+        </div>
+    </div>
+    <div class="card" id="4" onclick="openProduct(4)">
+        <img src="./images/pic4.png" alt="">
+        <div class="desc">
+            <h4>Farm Tshirt</h4>
+            <span>Price : 10$</span>
+        </div>
+    </div>
+    <div class="card" id="5" onclick="openProduct(5)">
+        <img src="./images/pic5.png" alt="">
+        <div class="desc">
+            <h4>White and Blue Tshirt</h4>
+            <span>Price : 10$</span>
+        </div>
+    </div>
+    <div class="card" id="6" onclick="openProduct(6)">
+        <img src="./images/pic6.png" alt="">
+        <div class="desc">
+            <h4>Smile Tshirt</h4>
+            <span>Price : 10$</span>
+        </div>
+    </div>
+    <div class="card" id="7" onclick="openProduct(7)">
+        <img src="./images/pic7.png" alt="">
+        <div class="desc">
+            <h4>Shadow Wraith T-Shirt</h4>
+            <span>Price : 10$</span>
+        </div>
+    </div>
+    <div class="card" id="8" onclick="openProduct(8)">
+        <img src="./images/pic8.png" alt="">
+        <div class="desc">
+            <h4>Disney Tshirt</h4>
+            <span>Price : 10$</span>
+        </div>
+    </div>
+    <div class="card" id="9" onclick="openProduct(9)">
+        <img src="./images/pic9.png" alt="">
+        <div class="desc">
+            <h4>Samurai Tshirt</h4>
+            <span>Price : 10$</span>
+        </div>
+    </div>
+    <div class="card" id="10" onclick="openProduct(10)">
+        <img src="./images/pic10.png" alt="">
+        <div class="desc">
+            <h4>Royal Green Tshirt</h4>
+            <span>Price : 10$</span>
+        </div>
+    </div>
+    <div class="card" id="11" onclick="openProduct(11)">
+        <img src="./images/pic11.png" alt="">
+        <div class="desc">
+            <h4>AIR BackTshirt</h4> 
+            <span>Price : 10$</span>
+        </div>
+    </div>
+</div>
+<script >
+    function openProduct(id){
+    window.location.href=`tshirt.html?id=${id}`;
+} 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const profileLink = document.getElementById("profile-link");
+    const username = localStorage.getItem("username");
+
+    if (username) {
+        profileLink.innerHTML = `<h0>${username.split('@')[0]}</h0>`;
+    }
+
+    profileLink.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        if (username) {
+            window.location.href = "admin.html"; 
+        }
+    });
+});                 
+</script> 
+</body>
+</html>
